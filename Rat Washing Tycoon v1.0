@@ -1,6 +1,20 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Rat Washing Tycoon", HidePremium = false, SaveConfig = false, ConfigFolder = "LSH"})
 
+local Information = Window:MakeTab({Name = "Information",Icon = "rbxassetid://4483345998",PremiumOnly = false})
+Information:AddButton({
+	Name = "Made By Hackier_Szuti",
+	Callback = function()
+      	setclipboard("Made By Hackier_Szuti")
+  	end    
+})
+
+Information:AddButton({
+	Name = "Click E To Teleport",
+	Callback = function()
+      	setclipboard("Click E To Teleport")
+  	end    
+})
 
 local Main = Window:MakeTab({Name = "Main", Icon = "rbxassetid://4483345998", PremiumOnly = false})
 local Main1 = Main:AddSection({Name = "Auto Clicker"})
