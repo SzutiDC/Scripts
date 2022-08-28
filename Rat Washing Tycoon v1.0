@@ -1,0 +1,74 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Rat Washing Tycoon", HidePremium = false, SaveConfig = false, ConfigFolder = "LSH"})
+
+
+local Main = Window:MakeTab({Name = "Main", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+local Main1 = Main:AddSection({Name = "Auto Clicker"})
+
+
+local Settings = Window:MakeTab({Name = "Settings", Icon = "rbxassetid://4483345998", PremiumOnly = false})
+
+
+---------------------------------
+-- MAIN
+Main1:AddToggle({Name = "AutoFarm [only green tycoon!]", Default = false, Callback = function(autoclicker)
+    if autoclicker == true then
+        getgenv().StartAutoClicker = true
+    elseif autoclicker == false then
+        getgenv().StartAutoClicker = false
+    end
+
+    while task.wait() and getgenv().StartAutoClicker == true do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(265.41351318359375, 3.973970651626587, -12.936641693115234)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(266.0125427246094, 3.973970651626587, 13.430563926696777)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(258.8318176269531, 3.973970651626587, 12.68021297454834)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(252.99899291992188, 3.973971128463745, 12.775054931640625)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(259.3822937011719, 3.973970651626587, 4.917471885681152)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(253.5887908935547, 3.973970651626587, 5.033835411071777)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(253.92242431640625, 3.973970651626587, -4.165719509124756)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(260.84783935546875, 3.973970651626587, -4.310227394104004)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(259.50445556640625, 3.973970651626587, -12.504149436950684)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(253.6903076171875, 3.973970651626587, -13.451735496520996)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(252.5246124267578, 3.973970651626587, 15.517351150512695)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(252.4125518798828, 3.973970651626587, -15.324148178100586)
+    end
+end})
+
+---------------------------------
+-- SETTINGS
+Settings:AddButton({Name = "Click me", Callback = function()
+    OrionLib:MakeNotification({Name = "OMG!", Content = "Why you clicked me motherfucker!", Image = "rbxassetid://4483345998", Time = 5})
+end})
+ 
+
+ plr = game.Players.LocalPlayer
+hum = plr.Character.HumanoidRootPart
+mouse = plr:GetMouse()
+
+mouse.KeyDown:connect(function(key)
+if key == "e" then
+if mouse.Target then
+hum.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+end
+end
+end)
+
+local vu = game:GetService("VirtualUser")
+	game:GetService("Players").LocalPlayer.Idled:connect(function()
+	vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+	wait(1)
+	vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+OrionLib:Init()
